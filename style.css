@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: #1e1b3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app {
+  width: 100%;
+  max-width: 620px;
+}
+
+.app-title {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+
+.quiz {
+  background: #fff;
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ---- progress ---- */
+
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.progress-text,
+.score-text {
+  font-size: 14px;
+  color: #6b6b7b;
+  font-weight: 600;
+}
+
+.progress-bar {
+  height: 6px;
+  background: #ece9f5;
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #5b4ce0;
+  border-radius: 99px;
+  transition: width 0.25s ease;
+}
+
+/* ---- question ---- */
+
+#question {
+  font-size: 20px;
+  line-height: 1.4;
+  color: #221e3d;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+/* ---- answers ---- */
+
+.answer-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.answer-buttons button {
+  /* Without this, Chrome paints DISABLED buttons with its own washed-out
+     native style and ignores the green/red background below - the colours
+     look almost white even though the CSS is correct. */
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  text-align: left;
+  background: #fff;
+  color: #221e3d;
+  font-size: 16px;
+  padding: 13px 16px;
+  border: 2px solid #ddd8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.answer-buttons button:hover:not([disabled]) {
+  background: #f3f1fd;
+  border-color: #5b4ce0;
+}
+
+.answer-buttons button[disabled] {
+  cursor: default;
+}
+
+.answer-buttons button.correct {
+  background: #c9efd7;
+  border-color: #22a05a;
+  color: #0f4d26;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.answer-buttons button.incorrect {
+  background: #fad4d4;
+  border-color: #cc3b3b;
+  color: #6d1616;
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* ---- next / restart button ---- */
+
+.next-btn {
+  display: none;           /* shown by script.js once an answer is picked */
+  margin-top: 22px;
+  margin-left: auto;
+  background: #5b4ce0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 11px 26px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.next-btn:hover {
+  background: #4a3cc9;
+}
+
+/* ---- results screen ---- */
+
+.result {
+  text-align: center;
+  padding: 6px 0 2px;
+}
+
+.result-score {
+  font-size: 38px;
+  font-weight: 700;
+  color: #5b4ce0;
+  margin-bottom: 6px;
+}
+
+.result-message {
+  font-size: 16px;
+  color: #6b6b7b;
+}
+
+@media (max-width: 480px) {
+  .quiz {
+    padding: 22px 18px;
+  }
+
+  #question {
+    font-size: 18px;
+  }
+
+  .next-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+}

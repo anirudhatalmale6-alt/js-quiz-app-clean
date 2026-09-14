@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+    <h1 class="app-title">Quiz</h1>
+
+    <div class="quiz">
+
+      <!-- Progress: "Question 2 of 5" + bar -->
+      <div class="progress-row">
+        <span id="progress-text" class="progress-text">Question 1 of 5</span>
+        <span id="score-text" class="score-text">Score: 0</span>
+      </div>
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+
+      <h2 id="question">Question goes here</h2>
+
+      <div id="answer-buttons" class="answer-buttons">
+        <!-- Answer buttons are created by script.js -->
+      </div>
+
+      <button id="next-btn" class="next-btn">Next</button>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
